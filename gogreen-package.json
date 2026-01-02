@@ -1,0 +1,21 @@
+{
+  "name": "gogreen-profile",
+  "version": "1.0.0",
+  "description": "Make your GitHub profile green with automated commits",
+  "main": "gogreen-2024.js",
+  "type": "module",
+  "scripts": {
+    "green": "node gogreen-2024.js",
+    "recent": "node recent-commits.js",
+    "setup": "npm install && node gogreen-2024.js"
+  },
+  "keywords": ["github", "contributions", "green", "profile"],
+  "author": "bikram73",
+  "license": "MIT",
+  "dependencies": {
+    "jsonfile": "^6.2.0",
+    "moment": "^2.30.1",
+    "random": "^4.1.0",
+    "simple-git": "^3.30.0"
+  }
+}
