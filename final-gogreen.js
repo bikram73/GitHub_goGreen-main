@@ -52,7 +52,7 @@ const createFinalCommits = async () => {
     for (let day = 1; day <= daysInMonth; day += Math.floor(Math.random() * 3) + 1) {
       // Skip some days randomly (80% chance of activity)
       if (Math.random() < 0.8) {
-        const dateStr = `2024-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+        const dateStr = `2025-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
         const hour = Math.floor(Math.random() * 12) + 9; // 9 AM to 8 PM
         const minute = Math.floor(Math.random() * 60);
         const second = Math.floor(Math.random() * 60);
