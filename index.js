@@ -33,33 +33,39 @@ const makeCommit = async (date) => {
   }
 };
 
-// Function to generate commits for the past year
-const generateCommits = async (numberOfCommits = 100) => {
-  console.log(`🚀 Starting to generate ${numberOfCommits} commits...`);
+// Function to generate commits for the past year (2024)
+const generateCommits = async (numberOfCommits = 200) => {
+  console.log(`🚀 Starting to generate ${numberOfCommits} commits for the past year...`);
   
   const commits = [];
+  const today = moment();
+  const oneYearAgo = moment().subtract(1, 'year');
   
   for (let i = 0; i < numberOfCommits; i++) {
-    // Generate random date within the past year
-    const weeksBack = random.int(0, 52); // 0-52 weeks back
-    const dayOfWeek = random.int(0, 6);   // 0-6 days of week
-    
-    const date = moment()
-      .subtract(weeksBack, 'weeks')
-      .subtract(dayOfWeek, 'days')
-      .format();
+    // Generate random date within the past year (2024)
+    const randomDays = random.int(1, 365); // 1-365 days back
+    const date = today.clone().subtract(randomDays, 'days').format();
     
     commits.push(date);
   }
   
-  // Sort dates chronologically
+  // Sort dates chronologically (oldest first)
   commits.sort();
   
+  console.log(`📅 Creating commits from ${commits[0]} to ${commits[commits.length - 1]}`);
+  
   // Create commits one by one
-  for (const date of commits) {
+  for (let i = 0; i < commits.length; i++) {
+    const date = commits[i];
     await makeCommit(date);
+    
+    // Show progress
+    if ((i + 1) % 20 === 0) {
+      console.log(`📊 Progress: ${i + 1}/${commits.length} commits created`);
+    }
+    
     // Small delay to avoid overwhelming git
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 50));
   }
   
   console.log('📤 Pushing commits to GitHub...');
@@ -68,6 +74,7 @@ const generateCommits = async (numberOfCommits = 100) => {
     await git.push('origin', 'main');
     console.log('🎉 All commits pushed successfully to GitHub!');
     console.log('Check your GitHub profile to see the green squares!');
+    console.log(`🌱 Created ${numberOfCommits} commits spanning the past year`);
   } catch (error) {
     console.error('❌ Error pushing to GitHub:', error.message);
     console.log('💡 Try running: git push origin main');
@@ -115,13 +122,11 @@ const samplePattern = [
 const main = async () => {
   console.log('🌱 Welcome to goGreen!');
   console.log('This will create commits to make your GitHub profile green.');
+  console.log(`📅 Today is: ${moment().format('YYYY-MM-DD')}`);
+  console.log(`📅 Creating commits for the past year (${moment().subtract(1, 'year').format('YYYY-MM-DD')} to today)`);
   
-  // Choose what to run:
-  // Option 1: Generate random commits
-  await generateCommits(150);
-  
-  // Option 2: Create a pattern (uncomment to use)
-  // await createPattern(samplePattern);
+  // Generate commits for the past year (2024)
+  await generateCommits(250);
 };
 
 // Run the script
