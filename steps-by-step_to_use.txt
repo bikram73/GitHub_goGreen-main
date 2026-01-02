@@ -1,1 +1,9 @@
-firstly copy the gogreen-2024.js or gogreen-2025.js as create new one as gogreen-2026.js 
+firstly copy the gogreen-2024.js or gogreen-2025.js as create new one as gogreen-2026.js as paste the code and do changes for 2026 go to chagatgpt and change the code
+next do this in terminal : git log --pretty=format:"%h %an <%ae> %ad %s" --date=short -5
+next : git add .
+next : git commit -m "Final goGreen implementation with correct author email" 
+next : git push
+
+and use remove-commits-by-year.js
+
+for removing the all this fake commits just change the years
