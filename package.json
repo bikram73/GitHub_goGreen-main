@@ -9,7 +9,12 @@
     "green": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["github", "commits", "green", "contribution-graph"],
+  "keywords": [
+    "github",
+    "commits",
+    "green",
+    "contribution-graph"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
