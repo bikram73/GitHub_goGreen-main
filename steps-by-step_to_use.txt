@@ -7,3 +7,5 @@ next : git push
 and use remove-commits-by-year.js
 
 for removing the all this fake commits just change the years
+
+and for run : node simple-remove-year.js
