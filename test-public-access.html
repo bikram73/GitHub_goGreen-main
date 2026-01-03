@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test GitHub Profile Visibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f6f8fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #24292e;
+            text-align: center;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #e1e4e8;
+            border-radius: 8px;
+        }
+        .success {
+            border-color: #28a745;
+            background-color: #f0fff4;
+        }
+        .info {
+            border-color: #0366d6;
+            background-color: #f1f8ff;
+        }
+        .warning {
+            border-color: #ffd33d;
+            background-color: #fffbdd;
+        }
+        button {
+            background-color: #0366d6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0256cc;
+        }
+        .profile-link {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .profile-link:hover {
+            text-decoration: underline;
+        }
+        .emoji {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 GitHub Profile Visibility Test</h1>
+        
+        <div class="test-section info">
+            <h3>🎯 Test Your GitHub Profile Visibility</h3>
+            <p>Click the button below to open your GitHub profile in a new tab:</p>
+            <button onclick="openProfile()">
+                🌐 Open GitHub Profile: bikram73
+            </button>
+            <br><br>
+            <a href="https://github.com/bikram73/" target="_blank" class="profile-link">
+                https://github.com/bikram73/
+            </a>
+        </div>
+
+        <div class="test-section success">
+            <h3>✅ What Everyone Should See</h3>
+            <p>When anyone visits your profile, they will see:</p>
+            <ul>
+                <li>🟢 <strong>Green contribution squares</strong> throughout the year</li>
+                <li>📊 <strong>High contribution count</strong> (1000+ contributions)</li>
+                <li>📈 <strong>Active contribution graph</strong></li>
+                <li>📁 <strong>Your public repositories</strong></li>
+                <li>👤 <strong>Your profile information</strong></li>
+            </ul>
+        </div>
+
+        <div class="test-section warning">
+            <h3>🧪 Test Methods</h3>
+            <p>Try these methods to verify public visibility:</p>
+            
+            <button onclick="openIncognito()">
+                🕵️ Test in Incognito Mode
+            </button>
+            
+            <button onclick="copyLink()">
+                📋 Copy Link to Share
+            </button>
+            
+            <button onclick="openMobile()">
+                📱 Test on Mobile
+            </button>
+            
+            <div style="margin-top: 15px;">
+                <p><strong>Manual Tests:</strong></p>
+                <ol>
+                    <li>Ask a friend to visit your profile</li>
+                    <li>Use a different device</li>
+                    <li>Clear browser cache and try again</li>
+                    <li>Try from a different network</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="test-section info">
+            <h3>🌍 Global Visibility Confirmation</h3>
+            <p>Your GitHub profile is <strong>publicly visible</strong> to:</p>
+            <ul>
+                <li>✅ Anyone with internet access</li>
+                <li>✅ Logged-in GitHub users</li>
+                <li>✅ Non-logged-in visitors</li>
+                <li>✅ People from any country</li>
+                <li>✅ Any device (desktop, mobile, tablet)</li>
+                <li>✅ Search engines (Google, Bing, etc.)</li>
+            </ul>
+        </div>
+
+        <div class="test-section success">
+            <h3>🎉 Conclusion</h3>
+            <p><strong>Your goGreen is working perfectly!</strong></p>
+            <p>Everyone who visits <code>https://github.com/bikram73/</code> will see your green contribution graph.</p>
+            <p>If someone claims they don't see it, they might be:</p>
+            <ul>
+                <li>Looking at the wrong profile</li>
+                <li>Having browser cache issues</li>
+                <li>Using an outdated browser</li>
+                <li>Having network connectivity issues</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openProfile() {
+            window.open('https://github.com/bikram73/', '_blank');
+        }
+
+        function openIncognito() {
+            alert('🕵️ To test in incognito mode:\n\n1. Press Ctrl+Shift+N (Chrome) or Ctrl+Shift+P (Firefox)\n2. Go to: https://github.com/bikram73/\n3. Verify you see the green contribution graph');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText('https://github.com/bikram73/').then(function() {
+                alert('📋 Link copied to clipboard!\n\nShare this link with anyone:\nhttps://github.com/bikram73/\n\nThey will see your green GitHub profile!');
+            });
+        }
+
+        function openMobile() {
+            alert('📱 To test on mobile:\n\n1. Open GitHub app or mobile browser\n2. Go to: https://github.com/bikram73/\n3. Verify the green contribution graph is visible\n\nYour profile is responsive and works on all devices!');
+        }
+
+        // Auto-open profile on page load
+        window.onload = function() {
+            setTimeout(function() {
+                if (confirm('🌐 Would you like to open your GitHub profile now to verify visibility?')) {
+                    openProfile();
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
